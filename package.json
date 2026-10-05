@@ -1,0 +1,17 @@
+{
+  "name": "rink-scraper",
+  "version": "1.0.0",
+  "description": "Google Cloud Function that scrapes Acuity Scheduling ice rink calendars",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "functions-framework --target=scrapeRink",
+    "scrape": "node scripts/run-local.js"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^5.0.5"
+  }
+}
