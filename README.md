@@ -68,3 +68,8 @@ shape and route to it in `index.js` based on the URL's hostname.
 - Dates with no published schedule yet (e.g. next month before the rink posts it) are simply empty.
 - These are Acuity's internal endpoints rather than its documented API (which needs the business
   owner's API key), so they could change without notice.
+
+## Screenshot
+
+<img width="1506" height="838" alt="Screenshot 2026-10-05 at 10 40 44 pm" src="https://github.com/user-attachments/assets/2536da1d-8fea-4ba9-baf9-cd44c3428b16" />
+
