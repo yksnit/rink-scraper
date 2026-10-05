@@ -33,10 +33,18 @@ npm start                                         # local function at http://loc
 
 ```bash
 gcloud functions deploy scrapeRink \
-  --gen2 --runtime=nodejs22 --region=us-central1 \
+  --gen2 --runtime=nodejs22 --region=us-south1 \
   --source=. --entry-point=scrapeRink --trigger-http --allow-unauthenticated \
+  --memory=256Mi --timeout=120s --max-instances=5 \
   --set-env-vars SCHEDULE_URL="https://app.acuityscheduling.com/schedule/abdd2b57/appointment/14752819/calendar/7377344"
 ```
+
+Live: https://us-south1-rink-scraper.cloudfunctions.net/scrapeRink
+
+> **Region matters.** Acuity returns `403 Forbidden` to some Google Cloud outgoing IP addresses.
+> In `us-central1` the function landed on a blocked address, but `us-south1` works. If the function
+> starts returning 502 errors that mention a 403, redeploy to another region, or route outgoing
+> traffic through a reserved static IP (Cloud NAT).
 
 ## Request parameters (all optional)
 
